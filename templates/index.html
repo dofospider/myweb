@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        Welcome to my IoT
+    </title>
+</head>
+
+<body>
+    <h1>Welcome to my IoT</h1>
+    <hr>
+    {% for post in posts %}
+        <p style="font-family: Arial;font-size: 14pt;font-weight: bold;">
+            <a href="/post/{{post.slug}}">{{post.title}}</a>
+        <p>
+    <!--
+        <p style="font-family: Arial;font-size: 16pt;font-weight: bold;">
+            {{post.title}}
+        </p>
+        <p style="font-family: Arial;font-size: 10pt;letter-spacing: 1pt;">
+            {{post.body}}
+        </p>
+    -->
+    {% endfor %}
+
+    <hr>
+    <h3>now:{{now}}</h3>
+</body>
+</html>
+
