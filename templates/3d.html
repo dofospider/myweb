@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        Welcome to my IoT
+    </title>
+</head>
+
+<body>
+    <h1>Welcome to my IoT</h1>
+    <hr>
+
+     {% for onedata in alldata %}
+        <p style="font-family: Arial;font-size: 14pt;font-weight: bold;">
+            <tr>{{onedata.create_data}}</tr>
+            <tr>{{onedata.order}}</tr>
+            <tr>{{onedata.three_d}}</tr>
+        <p>
+
+    {% endfor %}
+    <hr>
+  
+    <h3>now:{{now}}</h3>
+</body>
+</html>

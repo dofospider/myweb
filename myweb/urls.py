@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from mainsite.views import homepage, showpost
+from threeD.views import maintd
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', homepage),
     url(r'^post/(\w+)$', showpost),
+    url(r'^3d/', maintd),
 ]
