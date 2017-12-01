@@ -1,31 +1,235 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zh">
 <head>
-    <meta charset="utf-8">
-    <title>
-        Welcome to my IoT
-    </title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物联网测试站</title>
+<style>
+  html, body {
+  margin: 0;
+  height: 80%
+}
+
+.sky {
+  height: 480px;
+  background: #007fd5;
+  position: relative;
+  overflow: hidden;
+  -webkit-animation: sky_background 50s ease-out infinite;
+  -moz-animation: sky_background 50s ease-out infinite;
+  -o-animation: sky_background 50s ease-out infinite;
+  animation: sky_background 50s ease-out infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.clouds_one {
+  background: url("static/img/cloud_one.png");
+  position: absolute;
+  left: 0;
+  top: 70;
+  height: 100%;
+  width: 300%;
+  -webkit-animation: cloud_one 50s linear infinite;
+  -moz-animation: cloud_one 50s linear infinite;
+  -o-animation: cloud_one 50s linear infinite;
+  animation: cloud_one 50s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.clouds_two {
+  background: url("static/img/cloud_two.png");
+  position: absolute;
+  left: 0;
+  top: 70;
+  height: 100%;
+  width: 300%;
+  -webkit-animation: cloud_two 75s linear infinite;
+  -moz-animation: cloud_two 75s linear infinite;
+  -o-animation: cloud_two 75s linear infinite;
+  animation: cloud_two 75s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.clouds_three {
+  background: url("static/img/cloud_three.png");
+  position: absolute;
+  left: 0;
+  top: 70;
+  height: 100%;
+  width: 300%;
+  -webkit-animation: cloud_three 100s linear infinite;
+  -moz-animation: cloud_three 100s linear infinite;
+  -o-animation: cloud_three 100s linear infinite;
+  animation: cloud_three 100s linear infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.div-center{text-align:center;margin:0 ;padding:0;clear:both;border: 0;line-height:5px}
+.div-inline{margin:0;padding:0;display:inline-block;_display:inline;*display:inline;zoom:1; line-height:5px}
+
+@-webkit-keyframes sky_background {
+  0% {
+	background: #007fd5;
+	color: #007fd5
+  }
+  50% {
+	background: #9fd7fe;
+	color: #a3d9ff
+  }
+  100% {
+	background: #007fd5;
+	color: #007fd5
+  }
+}
+@-moz-keyframes sky_background {
+  0% {
+	background: #007fd5;
+	color: #007fd5
+  }
+  50% {
+	background: #9fd7fe;
+	color: #a3d9ff
+  }
+  100% {
+	background: #007fd5;
+	color: #007fd5
+  }
+}
+@keyframes sky_background {
+  0% {
+	background: #007fd5;
+	color: #007fd5
+  }
+  50% {
+	background: #9fd7fe;
+	color: #a3d9ff
+  }
+  100% {
+	background: #007fd5;
+	color: #007fd5
+  }
+}
+
+@-webkit-keyframes cloud_one {
+  0% {
+	left: 0
+  }
+  100% {
+	left: -200%
+  }
+}
+@-moz-keyframes cloud_one {
+  0% {
+	left: 0
+  }
+  100% {
+	left: -200%
+  }
+}
+@keyframes cloud_one {
+  0% {
+	left: 0
+  }
+  100% {
+	left: -200%
+  }
+}
+
+@-webkit-keyframes cloud_two {
+  0% {
+	left: 0
+  }
+  100% {
+	left: -200%
+  }
+}
+@-moz-keyframes cloud_two {
+  0% {
+	left: 0
+  }
+  100% {
+	left: -200%
+  }
+}
+@keyframes cloud_two {
+  0% {
+	left: 0
+  }
+  100% {
+	left: -200%
+  }
+}
+
+@-webkit-keyframes cloud_three {
+  0% {
+	left: 0
+  }
+  100% {
+	left: -200%
+  }
+}
+@-moz-keyframes cloud_three {
+  0% {
+	left: 0
+  }
+  100% {
+	left: -200%
+  }
+}
+@keyframes cloud_three {
+  0% {
+	left: 0
+  }
+  100% {
+	left: -200%
+  }
+}
+
+</style>
+
 </head>
-
 <body>
-    <h1>Welcome to my IoT</h1>
-    <hr>
-    {% for post in posts %}
-        <p style="font-family: Arial;font-size: 14pt;font-weight: bold;">
-            <a href="/post/{{post.slug}}">{{post.title}}</a>
-        <p>
-    <!--
-        <p style="font-family: Arial;font-size: 16pt;font-weight: bold;">
-            {{post.title}}
-        </p>
-        <p style="font-family: Arial;font-size: 10pt;letter-spacing: 1pt;">
-            {{post.body}}
-        </p>
-    -->
-    {% endfor %}
+<h1><font face="仿宋" color="blue"> &nbsp; &nbsp;我想吃，想爱，还想在一瞬间变成天上忽明忽暗的云。</font></h1>
+<div class="sky">
+	<a href="main/">
+    <div class="clouds_one"></div>
+	<div class="clouds_two"></div>
+	<div class="clouds_three"></div>
+    </a>
+</div>
+  <div class="div-center">
+     
+      <p ><font face="Lucida Calligraphy" color=#D200D2>You are visitor No. <img src="http://www.reliablecounter.com/count.php?page=www.dofospider.xin&digit=style/plain/21/&reloads=0" alt="" title="" border="0"></p>
 
-    <hr>
-    <h3>now:{{now}}</h3>
+       <p><font face="chiller" color=#33ccff>Creat by dofospider in 2017</font></p>
+
+
+
+  </div>
+
+<div class="div-center">
+
+    <div class="div-inline"style="width:300px;margin:0 auto; padding:20px 0;">
+                <a target="_blank" href="http://www.miitbeian.gov.cn/" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="" style="float:right;"/><p style="float:right;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;陕ICP备17021358号-1</p></a>
+    </div>
+    <div class="div-inline" style="width:300px;margin:0 auto; padding:20px 0;">
+                <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=61040402000171" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="static/img/gabalog.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">陕公网安备 61040402000171号</p></a>
+    </div>
+    
+</div>
+
 </body>
 </html>
-

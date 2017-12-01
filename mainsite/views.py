@@ -14,8 +14,14 @@ from django.template.loader import get_template
 # Create your views here.
 
 
-def homepage(request):
+def index(request):
     template = get_template('index.html')
+    html = template.render()
+    return HttpResponse(html)
+
+
+def homepage(request):
+    template = get_template('index_old.html')
     posts = Post.objects.all()
     now = datetime.now()
     html = template.render(locals())
@@ -32,3 +38,9 @@ def showpost(request, slug):
 
     except:
         return redirect('/')
+
+
+def home(request):
+    template = get_template('home.html')
+    html = template.render()
+    return HttpResponse(html)
